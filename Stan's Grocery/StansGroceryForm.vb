@@ -98,6 +98,7 @@ Public Class StansGroceryForm
 
     Sub LookUp()
         Dim searchText As String
+        Dim empty As Boolean = True
 
         DisplayListBox.Items.Clear()
 
@@ -109,9 +110,14 @@ Public Class StansGroceryForm
 
         For i = 0 To 255
             If InStr(food(i, 0), searchText) <> 0 Then
+                empty = False
                 DisplayListBox.Items.Add($"{Me.food(i, 0)}")
             End If
         Next
+
+        If empty = True Then
+            DisplayLabel.Text = ($"Sorry, no match was found for {searchText}")
+        End If
 
     End Sub
 
