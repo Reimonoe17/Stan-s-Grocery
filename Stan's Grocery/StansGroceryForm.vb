@@ -1,4 +1,8 @@
-﻿
+﻿'Jamison Burton
+'RCET0265
+'Spring 2022
+'Stan's Grocery
+'https://github.com/Reimonoe17/
 
 Option Compare Text
 Option Strict On
