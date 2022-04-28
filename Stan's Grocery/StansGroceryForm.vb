@@ -2,7 +2,7 @@
 'RCET0265
 'Spring 2022
 'Stan's Grocery
-'https://github.com/Reimonoe17/
+'https://github.com/Reimonoe17/Stan-s-Grocery
 
 Option Compare Text
 Option Strict On
