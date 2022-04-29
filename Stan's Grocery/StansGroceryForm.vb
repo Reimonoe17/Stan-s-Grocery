@@ -58,27 +58,18 @@ Public Class StansGroceryForm
         Dim aisle As Integer
 
         FilterComboBox.Items.Clear()
+        FilterComboBox.Items.Add("Show All")
 
         If FilterByAisleRadioButton.Checked = Enabled Then
             For i = Me.food.GetLowerBound(0) To Me.food.GetUpperBound(0)
                 Try
                     aisle = CInt(food(i, 1))
-
                 Catch ex As Exception
-
                 End Try
-
                 If FilterComboBox.Items.Contains(aisle.ToString.PadLeft(2)) = False Then
-
                     FilterComboBox.Items.Add(aisle.ToString.PadLeft(2))
                 End If
-
-                'If aisle = "" Then
-                '    aisle = 1
-                'End If
-
             Next
-            'FilterComboBox.Items.Add(food())
         ElseIf FilterByCategoryRadioButton.Checked = Enabled Then
             For i = Me.food.GetLowerBound(0) To Me.food.GetUpperBound(0)
                 Try
@@ -88,12 +79,13 @@ Public Class StansGroceryForm
                     End If
                 Catch ex As Exception
                     category = "Unlisted"
+
                 End Try
-
-
             Next
         End If
+
         FilterComboBox.Sorted = True
+
     End Sub
 
     Sub LookUp()
@@ -126,19 +118,24 @@ Public Class StansGroceryForm
 
         DisplayListBox.Items.Clear()
 
-        If FilterByAisleRadioButton.Checked = True Then
+        If filterContent = "Show All" Then
+            For i = 0 To 255
+                DisplayListBox.Items.Add($"{Me.food(i, 0)}")
+            Next
+        ElseIf FilterByAisleRadioButton.Checked = True Then
             For i = 0 To 255
                 If filterContent.Trim = food(i, 1) Then
                     DisplayListBox.Items.Add($"{Me.food(i, 0)}")
                 End If
             Next
-        ElseIf FilterByCategoryRadioButton.checked = True Then
+        ElseIf FilterByCategoryRadioButton.Checked = True Then
             For i = 0 To 255
                 If filterContent = food(i, 2) Then
                     DisplayListBox.Items.Add($"{Me.food(i, 0)}")
                 End If
             Next
         End If
+        DisplayListBox.Sorted = True
     End Sub
     Sub Location()
         Dim item As String
@@ -162,6 +159,9 @@ Public Class StansGroceryForm
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click, SearchToolStripMenuItem.Click
         LookUp()
+        FilterByAisleRadioButton.Checked = True
+        FilterComboBox.Items.Clear()
+        FilterComboBox.Items.Add("Show All")
     End Sub
 
     Private Sub FilterByAisleRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByAisleRadioButton.CheckedChanged, FilterByCategoryRadioButton.CheckedChanged
@@ -178,5 +178,9 @@ Public Class StansGroceryForm
 
     Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitToolStripMenuItem.Click
         Me.Close()
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        MsgBox("This program is a search engine for Stan's Grocery using the Grocery.txt file for reference." & vbNewLine & "Prepared for: Tim Rossiter" & vbNewLine & "Prepared by: Jamison Burton")
     End Sub
 End Class

@@ -23,13 +23,6 @@ Partial Class StansGroceryForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.ContextMenuStrip = New System.Windows.Forms.MenuStrip()
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.QuitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SecondFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FilterByCategoryRadioButton = New System.Windows.Forms.RadioButton()
         Me.FilterByAisleRadioButton = New System.Windows.Forms.RadioButton()
         Me.SearchGroupBox = New System.Windows.Forms.GroupBox()
@@ -42,58 +35,15 @@ Partial Class StansGroceryForm
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.MainToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ContextMenuStrip.SuspendLayout()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QuitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip = New System.Windows.Forms.MenuStrip()
         Me.SearchGroupBox.SuspendLayout()
+        Me.ContextMenuStrip.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ContextMenuStrip
-        '
-        Me.ContextMenuStrip.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
-        Me.ContextMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.ContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
-        Me.ContextMenuStrip.Location = New System.Drawing.Point(0, 0)
-        Me.ContextMenuStrip.Name = "ContextMenuStrip"
-        Me.ContextMenuStrip.Size = New System.Drawing.Size(828, 33)
-        Me.ContextMenuStrip.TabIndex = 0
-        Me.ContextMenuStrip.Text = "MenuStrip1"
-        '
-        'FileToolStripMenuItem
-        '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripMenuItem, Me.QuitToolStripMenuItem})
-        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(54, 29)
-        Me.FileToolStripMenuItem.Text = "File"
-        '
-        'SearchToolStripMenuItem
-        '
-        Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
-        Me.SearchToolStripMenuItem.Text = "Search"
-        '
-        'QuitToolStripMenuItem
-        '
-        Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
-        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
-        Me.QuitToolStripMenuItem.Text = "Quit"
-        '
-        'HelpToolStripMenuItem
-        '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.SecondFormToolStripMenuItem})
-        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(65, 29)
-        Me.HelpToolStripMenuItem.Text = "Help"
-        '
-        'AboutToolStripMenuItem
-        '
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(220, 34)
-        Me.AboutToolStripMenuItem.Text = "About"
-        '
-        'SecondFormToolStripMenuItem
-        '
-        Me.SecondFormToolStripMenuItem.Name = "SecondFormToolStripMenuItem"
-        Me.SecondFormToolStripMenuItem.Size = New System.Drawing.Size(220, 34)
-        Me.SecondFormToolStripMenuItem.Text = "Second Form"
         '
         'FilterByCategoryRadioButton
         '
@@ -102,8 +52,9 @@ Partial Class StansGroceryForm
         Me.FilterByCategoryRadioButton.Location = New System.Drawing.Point(9, 55)
         Me.FilterByCategoryRadioButton.Name = "FilterByCategoryRadioButton"
         Me.FilterByCategoryRadioButton.Size = New System.Drawing.Size(106, 24)
-        Me.FilterByCategoryRadioButton.TabIndex = 1
+        Me.FilterByCategoryRadioButton.TabIndex = 3
         Me.FilterByCategoryRadioButton.Text = "Category"
+        Me.MainToolTip.SetToolTip(Me.FilterByCategoryRadioButton, "To select Category")
         Me.FilterByCategoryRadioButton.UseVisualStyleBackColor = True
         '
         'FilterByAisleRadioButton
@@ -115,6 +66,7 @@ Partial Class StansGroceryForm
         Me.FilterByAisleRadioButton.Size = New System.Drawing.Size(73, 24)
         Me.FilterByAisleRadioButton.TabIndex = 2
         Me.FilterByAisleRadioButton.Text = "Aisle"
+        Me.MainToolTip.SetToolTip(Me.FilterByAisleRadioButton, "To select Aisle")
         Me.FilterByAisleRadioButton.UseVisualStyleBackColor = True
         '
         'SearchGroupBox
@@ -125,7 +77,7 @@ Partial Class StansGroceryForm
         Me.SearchGroupBox.Location = New System.Drawing.Point(9, 102)
         Me.SearchGroupBox.Name = "SearchGroupBox"
         Me.SearchGroupBox.Size = New System.Drawing.Size(460, 291)
-        Me.SearchGroupBox.TabIndex = 3
+        Me.SearchGroupBox.TabIndex = 0
         Me.SearchGroupBox.TabStop = False
         '
         'DisplayLabel
@@ -144,14 +96,16 @@ Partial Class StansGroceryForm
         Me.DisplayListBox.Name = "DisplayListBox"
         Me.DisplayListBox.Size = New System.Drawing.Size(341, 284)
         Me.DisplayListBox.Sorted = True
-        Me.DisplayListBox.TabIndex = 4
+        Me.DisplayListBox.TabIndex = 5
+        Me.MainToolTip.SetToolTip(Me.DisplayListBox, "Select result for location of item")
         '
         'LookUpTextBox
         '
         Me.LookUpTextBox.Location = New System.Drawing.Point(126, 36)
         Me.LookUpTextBox.Name = "LookUpTextBox"
         Me.LookUpTextBox.Size = New System.Drawing.Size(460, 26)
-        Me.LookUpTextBox.TabIndex = 5
+        Me.LookUpTextBox.TabIndex = 0
+        Me.MainToolTip.SetToolTip(Me.LookUpTextBox, "Enter name of the item you would like to seach here")
         '
         'FilterComboBox
         '
@@ -159,7 +113,8 @@ Partial Class StansGroceryForm
         Me.FilterComboBox.Location = New System.Drawing.Point(126, 68)
         Me.FilterComboBox.Name = "FilterComboBox"
         Me.FilterComboBox.Size = New System.Drawing.Size(196, 28)
-        Me.FilterComboBox.TabIndex = 6
+        Me.FilterComboBox.TabIndex = 4
+        Me.MainToolTip.SetToolTip(Me.FilterComboBox, "Select what aisle or category to search through")
         '
         'Label1
         '
@@ -184,13 +139,56 @@ Partial Class StansGroceryForm
         Me.SearchButton.Location = New System.Drawing.Point(592, 33)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(84, 36)
-        Me.SearchButton.TabIndex = 9
+        Me.SearchButton.TabIndex = 1
         Me.SearchButton.Text = "Search"
         Me.SearchButton.UseVisualStyleBackColor = True
         '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripMenuItem, Me.QuitToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(54, 32)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'SearchToolStripMenuItem
+        '
+        Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
+        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(166, 34)
+        Me.SearchToolStripMenuItem.Text = "Search"
+        '
+        'QuitToolStripMenuItem
+        '
+        Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
+        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(166, 34)
+        Me.QuitToolStripMenuItem.Text = "Quit"
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(65, 32)
+        Me.HelpToolStripMenuItem.Text = "Help"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(164, 34)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'ContextMenuStrip
+        '
+        Me.ContextMenuStrip.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
+        Me.ContextMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.ContextMenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.ContextMenuStrip.Name = "ContextMenuStrip"
+        Me.ContextMenuStrip.Size = New System.Drawing.Size(828, 36)
+        Me.ContextMenuStrip.TabIndex = 0
+        Me.ContextMenuStrip.Text = "MenuStrip1"
         '
         'StansGroceryForm
         '
@@ -209,22 +207,14 @@ Partial Class StansGroceryForm
         Me.MainMenuStrip = Me.ContextMenuStrip
         Me.Name = "StansGroceryForm"
         Me.Text = "Welcome to Stan's Grocery"
-        Me.ContextMenuStrip.ResumeLayout(False)
-        Me.ContextMenuStrip.PerformLayout()
         Me.SearchGroupBox.ResumeLayout(False)
         Me.SearchGroupBox.PerformLayout()
+        Me.ContextMenuStrip.ResumeLayout(False)
+        Me.ContextMenuStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents ContextMenuStrip As MenuStrip
-    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SearchToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents QuitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SecondFormToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FilterByCategoryRadioButton As RadioButton
     Friend WithEvents FilterByAisleRadioButton As RadioButton
     Friend WithEvents SearchGroupBox As GroupBox
@@ -237,4 +227,10 @@ Partial Class StansGroceryForm
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents DisplayLabel As Label
     Friend WithEvents MainToolTip As ToolTip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SearchToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents QuitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip As MenuStrip
 End Class
